@@ -3,11 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Main\\Desktop\\Data-Structure\\Progarm\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{44CF6C8E-F69D-4CE4-81D4-02E170946458}|..\\Class3th (Circle Linked List)\\Class3th (Circle Linked List).vcxproj|C:\\Users\\Main\\Desktop\\Data-Structure\\Class3th (Circle Linked List)\\Class3th (Circle Linked List).cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C928C04F-8E41-4DE6-AD3F-A3899BA5C319}|Progarm.vcxproj|C:\\Users\\Main\\Desktop\\Data-Structure\\Progarm\\Progarm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C928C04F-8E41-4DE6-AD3F-A3899BA5C319}|Progarm.vcxproj|solutionrelative:Progarm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8098FBC3-6A7C-4661-874D-870A6D1EC89E}|..\\Class 1th (SIngle Linked LIst)\\Class 1th (SIngle Linked LIst).vcxproj|C:\\Users\\Main\\Desktop\\Data-Structure\\Class 1th (SIngle Linked LIst)\\Class 1th (SIngle Linked LIst).cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{76FF4E8E-E240-4FA1-9C10-083C57CF920E}|..\\Class2th (Double Linked List)\\Class2th (Double Linked List).vcxproj|C:\\Users\\Main\\Desktop\\Data-Structure\\Class2th (Double Linked List)\\Class2th (Double Linked List).cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,30 +20,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Class 1th (SIngle Linked LIst).cpp",
-              "DocumentMoniker": "C:\\Users\\Main\\Desktop\\Data-Structure\\Class 1th (SIngle Linked LIst)\\Class 1th (SIngle Linked LIst).cpp",
-              "RelativeDocumentMoniker": "..\\Class 1th (SIngle Linked LIst)\\Class 1th (SIngle Linked LIst).cpp",
-              "ToolTip": "C:\\Users\\Main\\Desktop\\Data-Structure\\Class 1th (SIngle Linked LIst)\\Class 1th (SIngle Linked LIst).cpp",
-              "RelativeToolTip": "..\\Class 1th (SIngle Linked LIst)\\Class 1th (SIngle Linked LIst).cpp",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAAC8AAABEAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Class3th (Circle Linked List).cpp",
+              "DocumentMoniker": "C:\\Users\\Main\\Desktop\\Data-Structure\\Class3th (Circle Linked List)\\Class3th (Circle Linked List).cpp",
+              "RelativeDocumentMoniker": "..\\Class3th (Circle Linked List)\\Class3th (Circle Linked List).cpp",
+              "ToolTip": "C:\\Users\\Main\\Desktop\\Data-Structure\\Class3th (Circle Linked List)\\Class3th (Circle Linked List).cpp",
+              "RelativeToolTip": "..\\Class3th (Circle Linked List)\\Class3th (Circle Linked List).cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwcAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-17T11:20:26.739Z",
+              "WhenOpened": "2025-07-22T07:06:10.814Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "Class2th (Double Linked List).cpp",
+              "DocumentMoniker": "C:\\Users\\Main\\Desktop\\Data-Structure\\Class2th (Double Linked List)\\Class2th (Double Linked List).cpp",
+              "RelativeDocumentMoniker": "..\\Class2th (Double Linked List)\\Class2th (Double Linked List).cpp",
+              "ToolTip": "C:\\Users\\Main\\Desktop\\Data-Structure\\Class2th (Double Linked List)\\Class2th (Double Linked List).cpp",
+              "RelativeToolTip": "..\\Class2th (Double Linked List)\\Class2th (Double Linked List).cpp",
+              "ViewState": "AgIAALQAAAAAAAAAAAAQwNAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-20T22:51:37.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Progarm.cpp",
               "DocumentMoniker": "C:\\Users\\Main\\Desktop\\Data-Structure\\Progarm\\Progarm.cpp",
               "RelativeDocumentMoniker": "Progarm.cpp",
-              "ToolTip": "C:\\Users\\Main\\Desktop\\Data-Structure\\Progarm\\Progarm.cpp*",
-              "RelativeToolTip": "Progarm.cpp*",
-              "ViewState": "AgIAALAAAAAAAAAAAAAkwMoAAAAUAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Main\\Desktop\\Data-Structure\\Progarm\\Progarm.cpp",
+              "RelativeToolTip": "Progarm.cpp",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAAAJkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-07-15T11:07:27.58Z",
               "EditorCaption": ""

@@ -8,6 +8,9 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{76FF4E8E-E240-4FA1-9C10-083C57CF920E}|..\\Class2th (Double Linked List)\\Class2th (Double Linked List).vcxproj|C:\\Users\\Main\\Desktop\\Data-Structure\\Class2th (Double Linked List)\\Class2th (Double Linked List).cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44CF6C8E-F69D-4CE4-81D4-02E170946458}|..\\Class3th (Circle Linked List)\\Class3th (Circle Linked List).vcxproj|C:\\Users\\Main\\Desktop\\Data-Structure\\Class3th (Circle Linked List)\\Class3th (Circle Linked List).cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,8 +20,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Class3th (Circle Linked List).cpp",
+              "DocumentMoniker": "C:\\Users\\Main\\Desktop\\Data-Structure\\Class3th (Circle Linked List)\\Class3th (Circle Linked List).cpp",
+              "RelativeDocumentMoniker": "..\\Class3th (Circle Linked List)\\Class3th (Circle Linked List).cpp",
+              "ToolTip": "C:\\Users\\Main\\Desktop\\Data-Structure\\Class3th (Circle Linked List)\\Class3th (Circle Linked List).cpp",
+              "RelativeToolTip": "..\\Class3th (Circle Linked List)\\Class3th (Circle Linked List).cpp",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAIwJ4AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-22T07:06:10.814Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -27,7 +43,7 @@
               "RelativeDocumentMoniker": "..\\Class2th (Double Linked List)\\Class2th (Double Linked List).cpp",
               "ToolTip": "C:\\Users\\Main\\Desktop\\Data-Structure\\Class2th (Double Linked List)\\Class2th (Double Linked List).cpp",
               "RelativeToolTip": "..\\Class2th (Double Linked List)\\Class2th (Double Linked List).cpp",
-              "ViewState": "AgIAALcAAAAAAAAAAAAQwNAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-07-20T22:51:37.771Z",
               "EditorCaption": ""
@@ -40,7 +56,7 @@
               "RelativeDocumentMoniker": "Progarm.cpp",
               "ToolTip": "C:\\Users\\Main\\Desktop\\Data-Structure\\Progarm\\Progarm.cpp",
               "RelativeToolTip": "Progarm.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-07-15T11:07:27.58Z",
               "EditorCaption": ""
