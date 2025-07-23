@@ -2,36 +2,41 @@
 
 using namespace std;
 
+#define SIZE 4
+
 template <typename T>
-class Stack
+class Queue
 {
 private:
-	int count;
-	int highset;
-	int capacity;
+	int rear;
+	int fornt;
 
-	T* container;
+	T container[SIZE];
 public:
-	Stack()
+	Queue()
 	{
-		count = 0;
-		highset = -1;
-		capacity = 0;
+		rear = SIZE - 1;
+		fornt = SIZE - 1;
 
-		container = nullptr;
-	}
-
-	~Stack()
-	{
-		if (container != nullptr)
+		for (int i = 0; i < SIZE; i++)
 		{
-			delete[] container;
+			container[i] = NULL;
 		}
 	}
+
+	void push(T data)
+	{
+		if (front == SIZE - (rear + 1))
+		{
+			cout << "circular queue overflow" << endl;
+		}
+	}
+
 };
 
 int main()
 {
+
 
 	return 0;
 }

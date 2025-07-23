@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{8098fbc3-6a7c-4661-874d-870a6d1ec89e}</ProjectGuid>
-    <RootNamespace>Class1thSIngleLinkedLIst</RootNamespace>
+    <ProjectGuid>{545115c7-cf2e-4047-ad20-e72723295a3e}</ProjectGuid>
+    <RootNamespace>Class1thSingleLinkedLIst</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Class 1th (SIngle Linked LIst).cpp" />
+    <ClCompile Include="Class1th (Single Linked LIst).cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
