@@ -2,122 +2,135 @@
 
 using namespace std;
 
-template <typename KEY, typename VALUE>
-class HashTable
+template <typename T>
+class Graph
 {
 private:
-	struct Node
-	{
-		KEY key;
-		VALUE value;
+	int size; // 정점의 개수
+	int capacity; // 최대 용량
 
-		Node* next;
-	};
+	int count; // 인접 행렬의 크기
 
-	struct Bucket
-	{
-		int count;
-		Node* head;
-	};
+	T* vertex; // 정점의 집합
+	int** matrix; // 인접 행렬
 
-	int size;
-	Bucket * bucket;
 public:
-	HashTable()
+	Graph()
 	{
-		size = 8;
+		size = 0;
+		count = 0;
+		capacity = 0;
 
-		bucket = new Bucket[size];
+		vertex = nullptr;
+		matrix = nullptr;
 	}
 
-	unsigned int hash_function(KEY key)
+	void push(T data)
 	{
-		return (unsigned int)key % size;
+		if (capacity <= 0)
+		{
+			resize(1);
+		}
+		else if (size >= capacity)
+		{
+			resize(capacity * 2);
+		}
+
+		vertex[size++] = data;
 	}
 
-	void insert(KEY key, VALUE value)
+	void edge(int i, int j)
 	{
-		// 해시 함수를 통해서 값을 받는 임시 변수
-		int hashIndex = hash_function(key);
-
-		// 새로운 노드를 생성합니다.
-		Node* newNode = new Node;
-
-		newNode->key = key;
-		newNode->value = value;
-		newNode->next = nullptr;
-
-		// 노드가 1개라도 존재하지 않는다면
-
-		if (bucket[hashIndex].count == 0)
-		{					 
-			// bucket[hashIndex]의 head 포인터가 newNode를 가리키게 합니다.
-			bucket[hashIndex].head = newNode;
+		if (size <= 0)
+		{
+			cout << "adjacency matrix is empty" << endl;
+		}
+		else if (size <= i || size <= j)
+		{
+			cout << "index out of range" << endl;
 		}
 		else
 		{
-			newNode->next = bucket[hashIndex].head;
-
-			bucket[hashIndex].head = newNode;
-		}
-
-		// bucket[hashIndex]의 count를 증가시킵니다.
-		bucket[hashIndex].count++;
-	}
-
-	void erase(KEY key)
-	{
-		// 해시 값을 통해 값을 받는 임시 변수
-		int hashIndex = hash_function(key);
-
-		// Node를 탐색할 수 있는 포인터 변수 선언
-		Node* currentNode = bucket[hashIndex].head;
-
-		// 이전 Node를 저장할 수 있는 포인터 변수
-		Node* previousNode = nullptr;
-
-		// currentNode가 nullptr과 같다면 함수를 종료합니다.
-		if (currentNode == nullptr)
-		{
-			cout << "not key found" << endl;
-
-			return;
-		}
-
-		for (int i = 0; i < bucket[hashIndex].count; i++)
-		{
-			previousNode = currentNode;
-			currentNode = currentNode->next;
-
-			if (currentNode->key == key)
+			if (matrix == nullptr)
 			{
-				previousNode->next = currentNode->next;
+				count = size;
 
-				delete currentNode;
+				matrix = new int* [size];
 
-				return;
+				for (int i = 0; i < size; i++)
+				{
+					matrix[i] = new int[size];
+
+					for (int j = 0; j < size; j++)
+					{
+						matrix[i][j] = 0;
+					}
+				}
 			}
-		}
 
-		cout << "not key found" << endl;
+			matrix[i][j] = 1;
+			matrix[j][i] = 1;
+		}
 	}
 
-	const int& bucket_count()
+	void resize(int newSize)
 	{
-		return size;
+		// 1. capacity에 새로운 size값을 저장합니다.
+		capacity = newSize;
+
+		// 2. 새로운 포인터 변수를 생성해서 만들어진 
+		//	  메모리 공간을 가리키도록 합니다.
+		T* conatiner = new T[capacity];
+
+		// 3. 새로운 메모리 공간의 값을 초기화합니다.
+		for (int i = 0; i < capacity; i++)
+		{
+			conatiner[i] = NULL;
+		}
+
+		// 4. 기존 배열의 있는 값을 복사해서 새로운 
+		//	  배열에 넣어줍니다.
+		for (int i = 0; i < size; i++)
+		{
+			conatiner[i] = vertex[i];
+		}
+
+		// 5, 기존 배열의 메모리를 해제합니다
+		if (vertex != nullptr)
+		{
+			delete[] vertex;
+		}
+
+		// 6. 기존에 배열을 가리키던 포인터 변수의 값을 
+		//    새로운 배열의 시작 주소로 가리킵니다.
+		vertex = conatiner;
+	}
+
+	~Graph()
+	{
+		if (matrix != nullptr)
+		{
+			for (int i = 0; i < size; i++)
+			{
+				delete[] matrix[i];
+			}
+
+			delete[] matrix;
+		}
+
+		delete[] vertex;
 	}
 };
 
 int main()
 {
-	HashTable<const char*, int> hashtable;
+	Graph<char> graph;
 
-	hashtable.insert("Hi", 11);
-	hashtable.insert("Hello", 22);
-	hashtable.insert("Good", 99);
+	graph.push('A');
+	graph.push('B');
+	graph.push('C');
 
-	hashtable.erase("Hi");
-	hashtable.erase("aaa");
+	graph.edge(0, 1);
 
 	return 0;
 }
