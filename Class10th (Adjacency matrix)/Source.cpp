@@ -12,7 +12,7 @@ private:
 	int count; // 인접 행렬의 크기
 
 	T* vertex; // 정점의 집합
-	int** matrix; // 인접 행렬
+	int** list; // 인접 행렬
 
 public:
 	Graph()
@@ -22,7 +22,7 @@ public:
 		capacity = 0;
 
 		vertex = nullptr;
-		matrix = nullptr;
+		list = nullptr;
 	}
 
 	void push(T data)
@@ -51,19 +51,19 @@ public:
 		}
 		else
 		{
-			if (matrix == nullptr)
+			if (list == nullptr)
 			{
 				count = size;
 
-				matrix = new int* [size];
+				list = new int* [size];
 
 				for (int i = 0; i < size; i++)
 				{
-					matrix[i] = new int[size];
+					list[i] = new int[size];
 
 					for (int j = 0; j < size; j++)
 					{
-						matrix[i][j] = 0;
+						list[i][j] = 0;
 					}
 				}
 			}
@@ -72,8 +72,8 @@ public:
 				resize();
 			}
 
-			matrix[i][j] = 1;
-			matrix[j][i] = 1;
+			list[i][j] = 1;
+			list[j][i] = 1;
 		}
 	}
 
@@ -90,21 +90,21 @@ public:
 		{
 			for (int j = 0; j < count; j++)
 			{
-				newMatrix[i][j] = matrix[i][j];
+				newMatrix[i][j] = list[i][j];
 			}
 		}
 
-		if (matrix != nullptr)
+		if (list != nullptr)
 		{
 			for (int i = 0; i < count; i++)
 			{
-				delete[] matrix[i];
+				delete[] list[i];
 			}
 
-			delete[] matrix;
+			delete[] list;
 		}
 
-		matrix = newMatrix;
+		list = newMatrix;
 
 		count = size;
 	}
@@ -116,19 +116,19 @@ public:
 
 		// 2. 새로운 포인터 변수를 생성해서 만들어진 
 		//	  메모리 공간을 가리키도록 합니다.
-		T* conatiner = new T[capacity];
+		T* container = new T[capacity];
 
 		// 3. 새로운 메모리 공간의 값을 초기화합니다.
 		for (int i = 0; i < capacity; i++)
 		{
-			conatiner[i] = NULL;
+			container[i] = NULL;
 		}
 
 		// 4. 기존 배열의 있는 값을 복사해서 새로운 
 		//	  배열에 넣어줍니다.
 		for (int i = 0; i < size; i++)
 		{
-			conatiner[i] = vertex[i];
+			container[i] = vertex[i];
 		}
 
 		// 5, 기존 배열의 메모리를 해제합니다
@@ -139,7 +139,7 @@ public:
 
 		// 6. 기존에 배열을 가리키던 포인터 변수의 값을 
 		//    새로운 배열의 시작 주소로 가리킵니다.
-		vertex = conatiner;
+		vertex = container;
 	}
 
 	friend ostream& operator << (ostream& ostream, const Graph<T>& graph)
@@ -159,7 +159,7 @@ public:
 
 			for (int j = 0; j < graph.count; j++)
 			{
-				ostream << graph.matrix[i][j] << " ";
+				ostream << graph.list[i][j] << " ";
 			}
 
 			ostream << endl;
@@ -170,14 +170,14 @@ public:
 
 	~Graph()
 	{
-		if (matrix != nullptr)
+		if (list != nullptr)
 		{
 			for (int i = 0; i < count; i++)
 			{
-				delete[] matrix[i];
+				delete[] list[i];
 			}
 
-			delete[] matrix;
+			delete[] list;
 		}
 
 		delete[] vertex;
