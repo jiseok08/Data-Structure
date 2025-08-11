@@ -128,6 +128,43 @@ public:
 		}
 	}
 
+	void remove(T data)
+	{
+		int count = size;
+
+		Node* currentNode = head;
+		Node* previousNode = nullptr;
+
+		for (int i = 0; i < count; i++)
+		{
+			if (currentNode->data == data)
+			{
+				if (currentNode == head)
+				{
+					currentNode = currentNode->next;
+
+					pop_back();
+				}
+				else if (currentNode == head->next)
+				{
+					currentNode = currentNode->next;
+
+					pop_front();
+				}
+				else
+				{
+					previousNode->next = currentNode->next;
+
+					delete currentNode;
+					
+					currentNode = previousNode->next;
+
+					size--;
+				}
+			}
+		}
+	}
+
 	bool empty()
 	{
 		return (head == nullptr);
@@ -147,14 +184,11 @@ int main()
 {
 	List<int> list;
 
-	list.push_back(10);
-	list.push_back(20);
-	list.push_front(5);
+	list.push_back(1);
+	list.push_back(2);
+	list.push_front(3);
 
-	list.pop_front();
-	list.pop_front();
-	list.pop_back();
-	list.pop_back();
+	list.remove(3);
 
 	cout << list.empty() << endl;
 
