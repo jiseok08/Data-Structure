@@ -40,7 +40,7 @@ public:
 
 			while (currentNode != nullptr)
 			{
-				if (currentNode->data > data)
+				if (currentNode->data == data)
 				{
 					delete newNode;
 
@@ -78,9 +78,12 @@ public:
 	void erase(T data)
 	{
 		Node* currentNode = root;
+		Node* parrentNode = nullptr;
 
-		while (currentNode->data > data)
+		while (currentNode != nullptr && currentNode->data != data)
 		{
+			parrentNode = currentNode;
+
 			if (currentNode->data > data)
 			{
 				currentNode = currentNode->left;
@@ -90,6 +93,87 @@ public:
 				currentNode = currentNode->right;
 			}
 		}
+
+		if (currentNode == nullptr)
+		{
+			cout << "the data does not exist" << endl;
+		}
+		else if (currentNode->left == nullptr && currentNode->right == nullptr)
+		{
+			if (parrentNode != nullptr)
+			{
+				if (parrentNode->left == currentNode)
+				{
+					parrentNode->left = nullptr;
+				}
+				else
+				{
+					parrentNode->right = nullptr;
+				}
+			}
+			else
+			{
+				root = nullptr;
+			}
+		}
+		else if (currentNode->left == nullptr || currentNode->right == nullptr)
+		{
+			if (currentNode == root)
+			{
+				if (currentNode->left != nullptr)
+				{
+					root = currentNode->left;
+				}
+				else
+				{
+					root = currentNode->right;
+				}
+			}
+			else
+			{
+				Node* childNode = nullptr;
+
+				if (currentNode->left != nullptr)
+				{
+					childNode = currentNode->left;
+				}
+				else
+				{
+					childNode = currentNode->right;
+				}
+
+				if (parrentNode->left == currentNode)
+				{
+					parrentNode->left = childNode;
+				}
+				else
+				{
+					parrentNode->right = childNode;
+				}
+			}
+		}
+		else
+		{
+			Node* traceNode = currentNode->right;
+			Node* childNode = nullptr;
+
+			while (childNode->left != nullptr)
+			{
+				traceNode = childNode;
+
+				childNode = traceNode->left;
+			}
+
+			traceNode = childNode->right;
+
+			currentNode->right = traceNode;
+
+			delete childNode;
+
+			break;
+		}
+
+		delete currentNode;
 	}
 
 	void release(Node* root)
@@ -116,10 +200,12 @@ int main()
 	Set<int> set;
 
 	set.insert(10);
-	set.insert(6);
-	set.insert(20);
+	set.insert(17);
+	set.insert(5);
 	set.insert(3);
-	set.insert(11);
+	set.insert(20);
+
+	set.erase(17);
 
 	return 0;
 }
